@@ -63,11 +63,11 @@ string decorated(string, {decorator...}, {decorator...});	// 在字符串首尾�
 #### foreground
 
 ```C++
-foreground(int r, int g, int b);	// 24 bit color
+foreground(int r, int g, int b);		// 24 bit color
     r: 0<=int<=255
     g: 0<=int<=255
     b: 0<=int<=255
-foreground(int color);			// 8 bit color
+foreground(int color);				// 8 bit color
     color: 0<=int<=255
 foreground(std::string color);
     color: "black","red", "green", "yellow", "blue", "magenta", "cyan", "white", 
@@ -101,9 +101,9 @@ cursor(std::string direction, int n);		// 向给定方向移动n个单位
 
 ```C++
 erase(std::string target, std::string type);
-    target: "line", "screen"	// 清除范围
-    type:	"after"  	// 清除当前位置后的所有字符
-        	"before" 	// 清除当前位置前的所有字符
-        	"all"		// 清除范围内的所有字符
+    target: "line", "screen"			// 清除范围
+    type:  "after"  				// 清除当前位置后的所有字符
+           "before" 				// 清除当前位置前的所有字符
+           "all"				// 清除范围内的所有字符
 ```
 
