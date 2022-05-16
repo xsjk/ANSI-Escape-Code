@@ -2,7 +2,7 @@
 
 int main() {
 
-    std::cout << foreground("red");	        // 设置字体颜色为红色
+    std::cout << foreground("red");         // 设置字体颜色为红色
     std::cout << background("black");       // 设置背景颜色为黑色
     std::cout << "Hello, world!\n";
     std::cout << style("reset");            // 重置以清除所有效果
