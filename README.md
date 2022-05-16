@@ -25,7 +25,7 @@ std::cout << style("reset");			// 重置以清除所有效果
 ```C++
 std::cout << cursor("up",2);			// 向上移动2个单位
 std::cout << cursor("right");			// 向右移动1个单位
-std::cout << "***";						// ell 被 *** 覆盖
+std::cout << "***";				// ell 被 *** 覆盖
 std::cout << cursor(5,1,true);			// 向右移动5个单位，向下移动1个单位
 ```
 
@@ -54,8 +54,8 @@ std::cout << decorated("Hello, World!\n", {erase("line","before")});
 ### decorated
 
 ```C++
-string decorated(string, {decorator...})					// 在字符串首添加修饰，尾部默认为style("reset")
-string decorated(string, {decorator...}, {decorator...})	// 在字符串首尾分别添加修饰
+string decorated(string, {decorator...});			// 在字符串首添加修饰，尾部默认为style("reset")
+string decorated(string, {decorator...}, {decorator...});	// 在字符串首尾分别添加修饰
 ```
 
 ### decorators
@@ -63,15 +63,15 @@ string decorated(string, {decorator...}, {decorator...})	// 在字符串首尾�
 #### foreground
 
 ```C++
-foreground(int r, int g, int b) // 24 bit color
+foreground(int r, int g, int b);	// 24 bit color
     r: 0<=int<=255
-	g: 0<=int<=255
-	b: 0<=int<=255
-foreground(int color)	// 8 bit color
+    g: 0<=int<=255
+    b: 0<=int<=255
+foreground(int color);			// 8 bit color
     color: 0<=int<=255
-foreground(std::string color)
-    color: 	"black","red", "green", "yellow", "blue", "magenta", "cyan", "white", 
-			"lightblack", "lightred", "lightgreen", ...
+foreground(std::string color);
+    color: "black","red", "green", "yellow", "blue", "magenta", "cyan", "white", 
+	   "lightblack", "lightred", "lightgreen", ...
 ```
 
 #### background
@@ -81,29 +81,29 @@ foreground(std::string color)
 #### style
 
 ```C++
-style(std::string type)	
+style(std::string type);
     type: "reset", "bright", "dim", "italic", "underline", "blink", "reverse", "hidden", "crossed", ...
 ```
 
 #### cursor
 
 ```C++
-cursor(int x,int y)			// 设置光标的绝对坐标（相对于屏幕左上角，x正方向向右，y正方向向下）
-cursor(int x,int y,true)	// 以当前位置为起点
-cursor(std::string direction, int n)			// 向给定方向移动n个单位
+cursor(int x,int y);				// 设置光标的绝对坐标（相对于屏幕左上角，x正方向向右，y正方向向下）
+cursor(int x,int y,true);			// 以当前位置为起点
+cursor(std::string direction, int n);		// 向给定方向移动n个单位
     direction: 	"up", "down", "left", "right" 	// 向上，下，左，右移动n个字符
-				"previous", "next" 				// 移动到前n行行首，后n行行首
-   				"pageup", "pagedown"			// 上一页，下一页
-	n: int 
+		"previous", "next" 		// 移动到前n行行首，后n行行首
+   		"pageup", "pagedown"		// 上一页，下一页
+    n: int 
 ```
 
 #### erase
 
 ```C++
-erase(std::string target, std::string type)
+erase(std::string target, std::string type);
     target: "line", "screen"	// 清除范围
-    type:	"after"  			// 清除当前位置后的所有字符
-        	"before" 			// 清除当前位置前的所有字符
-        	"all"				// 清除范围内的所有字符
+    type:	"after"  	// 清除当前位置后的所有字符
+        	"before" 	// 清除当前位置前的所有字符
+        	"all"		// 清除范围内的所有字符
 ```
 
