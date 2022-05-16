@@ -10,7 +10,7 @@
 
 ```C++
 std::cout << foreground("red");			// 设置字体颜色为红色
-std::cout << background("black");       // 设置背景颜色为黑色
+std::cout << background("black");       	// 设置背景颜色为黑色
 std::cout << "Hello, world!\n";			// 打印出黑底红字
 std::cout << style("reset");			// 重置以清除所有效果
 
