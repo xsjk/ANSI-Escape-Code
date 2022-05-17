@@ -89,10 +89,10 @@ style(std::string type);
 
 ```C++
 cursor(int x,int y);				// 设置光标的绝对坐标（相对于屏幕左上角，x正方向向右，y正方向向下）
-cursor(int x,int y,true);			// 以当前位置为起点
-cursor(std::string direction, int n);		// 向给定方向移动n个单位
-    direction: 	"up", "down", "left", "right" 	// 向上，下，左，右移动n个字符
-		"previous", "next" 		// 移动到前n行行首，后n行行首
+cursor(int x,int y,true);			// 以当前位置为起点，移动光标（x正方向向右，y正方向向下）
+cursor(std::string direction, int n);		// 光标向给定方向移动n个单位
+    direction: 	"up", "down", "left", "right" 	// 光标向上，下，左，右移动n个字符
+		"previous", "next" 		// 移动光标到前n行行首，后n行行首
    		"pageup", "pagedown"		// 上一页，下一页
     n: int 
 ```
@@ -101,9 +101,9 @@ cursor(std::string direction, int n);		// 向给定方向移动n个单位
 
 ```C++
 erase(std::string target, std::string type);
-    target: "line", "screen"			// 清除范围
-    type:  "after"  				// 清除当前位置后的所有字符
-           "before" 				// 清除当前位置前的所有字符
+    target: "line", "screen"			// 范围
+    type:  "after"  				// 清除范围内当前位置后的所有字符
+           "before" 				// 清除范围内当前位置前的所有字符
            "all"				// 清除范围内的所有字符
 ```
 
